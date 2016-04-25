@@ -4,6 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="css/admin.css">
 </head>
 <body>
+	<a href="create.php">Pagina toevoegen</a>
 	<table>
 		<tr>
 			<td>Pagina</td>
