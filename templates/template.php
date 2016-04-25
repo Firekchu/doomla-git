@@ -5,11 +5,16 @@
 	<link rel="stylesheet" type="text/css" href="CSS/template.css">
 </head>
 <body>
+	<header>
+		<nav>
+			<ul>
+				<?= getMenu(); ?>
+			</ul>
+		</nav>
+	</header>
 	<section>
 		<article>
-			<?php
-			echo getContent();
-			?>
+			<?= getContent(); ?>
 		</article>
 	</section>
 </body>

@@ -22,7 +22,7 @@ function getContent()
 	$page = page();
 	$db = database();
 
-	$query = "SELECT * FROM pagecontent WHERE page='$page'";
+	$query = "SELECT content FROM pagecontent WHERE page='$page'";
 	$result = $db->query($query);
 	$values = $result->fetch_all(MYSQLI_ASSOC);
 
@@ -37,6 +37,21 @@ function getContent()
 	}
 
 	return $content;
+}
+
+function getMenu()
+{
+	$db = database();
+
+	$query = "SELECT * FROM pagecontent";
+	$result = $db->query($query);
+	$values = $result->fetch_all(MYSQLI_ASSOC);
+
+	if (is_array($values) || is_object($values)) {
+	    foreach ($values as $value) {
+	        echo "<a href='?page=".$value['page']."'><li>".$value['menuoption']."</li></a>";
+	    }
+	}
 }
 
 require "templates/template.php";
