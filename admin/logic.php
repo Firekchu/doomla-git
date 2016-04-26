@@ -18,15 +18,29 @@ if (isset($_GET['create'])) {
 	header('location:index.php');
 }
 
-if (isset($delete)) {
+if (isset($details)) {
 	$query = "SELECT * FROM pagecontent WHERE id=$id";
 	$result = $db->query($query);
 	$values = $result->fetch_all(MYSQLI_ASSOC);
 }
+
 if (isset($_GET['delete'])) {
 	if (isset($_GET['id']) & is_numeric($_GET['id'])) {
 		$id = $_GET['id'];
 		$query = "DELETE FROM pagecontent WHERE id='$id'";
+		$db->query($query);
+
+		header('location:index.php');
+	}
+}
+
+if (isset($_GET['edit'])) {
+	if (isset($_GET['id']) & is_numeric($_GET['id'])) {
+		$page = $_POST['page'];
+		$menuoption = $_POST['menuoption'];
+		$content = $_POST['content'];
+		$id = $_GET['id'];
+		$query = "UPDATE pagecontent SET page='$page', menuoption='$menuoption', content='$content' WHERE id='$id'";
 		$db->query($query);
 
 		header('location:index.php');
