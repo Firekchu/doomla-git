@@ -2,7 +2,7 @@
 $db = new mysqli('localhost','root','','doomla');
 
 if (isset($index)) {
-	$query = "SELECT * FROM pagecontent";
+	$query = "SELECT * FROM pagecontent ORDER BY menuorder ASC";
 	$result = $db->query($query);
 	$values = $result->fetch_all(MYSQLI_ASSOC);
 }
@@ -38,9 +38,10 @@ if (isset($_GET['edit'])) {
 	if (isset($_GET['id']) & is_numeric($_GET['id'])) {
 		$page = $_POST['page'];
 		$menuoption = $_POST['menuoption'];
+		$menuorder = $_POST['menuorder'];
 		$content = $_POST['content'];
 		$id = $_GET['id'];
-		$query = "UPDATE pagecontent SET page='$page', menuoption='$menuoption', content='$content' WHERE id='$id'";
+		$query = "UPDATE pagecontent SET page='$page', menuoption='$menuoption', menuorder='$menuorder', content='$content' WHERE id='$id'";
 		$db->query($query);
 
 		header('location:index.php');

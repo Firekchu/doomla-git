@@ -10,6 +10,9 @@
 			<td>Pagina</td>
 			<td>Inhoud</td>
 			<td>Menu-optie</td>
+			<td>Volgorde</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<?php
 		$index = true;
@@ -21,6 +24,7 @@
 		        "<td>".$value['page']."</td>".
 		        "<td>".$value['content']."</td>".
 		        "<td>".$value['menuoption']."</td>".
+		        "<td>".$value['menuorder']."</td>".
 		        "<td><a href='edit.php?id=".$value['id']."'>wijzigen</a></td>".
 		        "<td><a href='delete.php?id=".$value['id']."'>verwijderen</a></td>".
 		        "<tr>";
