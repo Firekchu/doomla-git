@@ -4,7 +4,7 @@
 </head>
 <body>
 	<h1>Pagina toevoegen</h1>
-	<form method="post" action="create.logic.php">
+	<form method="post" action="logic.php?create">
 		<label>Pagina:</label>
 		<input type="text" name="page"><br>
 		<label>Menu-optie:</label>
