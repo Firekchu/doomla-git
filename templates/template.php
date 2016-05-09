@@ -6,7 +6,9 @@
 </head>
 <body>
 	<header>
+		<h1 id="topheading">Doomla!</h1>
 		<nav>
+			<h2 id="pages">Pages:</h2>
 			<ul>
 				<?= getMenu(); ?>
 			</ul>
