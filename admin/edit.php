@@ -21,6 +21,8 @@
 		<input type="text" value="<?= $value['menuoption']; ?>" name="menuoption"><br>
 		<label>Volgorde:</label>
 		<input type="text" value="<?= $value['menuorder']; ?>" name="menuorder"><br>
+		<label>Template:</label>
+		<input type="text" value="<?= $value['template']; ?>" name="template"><br>
 		<label>Inhoud:</label>
 		<textarea name="content"><?= $value['content']; ?></textarea>
 		<?php endforeach; ?>

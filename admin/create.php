@@ -9,6 +9,8 @@
 		<input type="text" name="page"><br>
 		<label>Menu-optie:</label>
 		<input type="text" name="menuoption"><br>
+		<label>Template:</label>
+		<input type="text" name="template"><br>
 		<label>Inhoud:</label>
 		<textarea name="content"></textarea>
 		<input type="submit">

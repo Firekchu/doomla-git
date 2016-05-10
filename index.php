@@ -39,6 +39,24 @@ function getContent()
 	return $content;
 }
 
+function getTemplate()
+{
+	$page = page();
+	$db = database();
+
+	$query = "SELECT template FROM pagecontent WHERE page='$page'";
+	$result = $db->query($query);
+	$values = $result->fetch_all(MYSQLI_ASSOC);
+
+	if (is_array($values) || is_object($values)) {
+	    foreach ($values as $value) {
+	        $template = $value['template'];
+	    }
+	}
+
+	return $template;
+}
+
 function getMenu()
 {
 	$db = database();
@@ -54,5 +72,6 @@ function getMenu()
 	}
 }
 
-require "templates/template.php";
+
+require "templates/".getTemplate();
 ?>

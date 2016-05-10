@@ -11,8 +11,9 @@ if (isset($_GET['create'])) {
 	$page = $_POST['page'];
 	$content = $_POST['content'];
 	$menuoption = $_POST['menuoption'];
+	$template = $_POST['template'];
 
-	$query = "INSERT INTO pagecontent (page, content, menuoption) VALUES ('$page', '$content', '$menuoption')";
+	$query = "INSERT INTO pagecontent (page, content, menuoption, template) VALUES ('$page', '$content', '$menuoption', '$template')";
 	$db->query($query);
 
 	header('location:index.php');
@@ -40,8 +41,9 @@ if (isset($_GET['edit'])) {
 		$menuoption = $_POST['menuoption'];
 		$menuorder = $_POST['menuorder'];
 		$content = $_POST['content'];
+		$template = $_POST['template'];
 		$id = $_GET['id'];
-		$query = "UPDATE pagecontent SET page='$page', menuoption='$menuoption', menuorder='$menuorder', content='$content' WHERE id='$id'";
+		$query = "UPDATE pagecontent SET page='$page', menuoption='$menuoption', menuorder='$menuorder', content='$content', template='$template' WHERE id='$id'";
 		$db->query($query);
 
 		header('location:index.php');
