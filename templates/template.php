@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>doomla</title>
+	<title><?= getTitle(); ?></title>
 	<link rel="stylesheet" type="text/css" href="CSS/template.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
 	</header>
 	<section>
 		<article>
-			<?= getContent(); ?>
+			<?= getContent($get="content"); ?>
 		</article>
 	</section>
 </body>

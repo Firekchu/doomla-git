@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>doomla</title>
+	<title><?= getTitle(); ?></title>
 	<link rel="stylesheet" type="text/css" href="CSS/night.css">
 </head>
 <body>
